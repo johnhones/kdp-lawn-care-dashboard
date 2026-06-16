@@ -169,10 +169,12 @@
   .tip-box::after { content: ''; position: absolute; top: 100%; left: 8px; border: 5px solid transparent; border-top-color: #fff; }
   .tip:hover .tip-box { display: block; }
 
-  /* STICKY NAV */
-  .site-nav { position:sticky; top:0; z-index:200; background:#142e3a; border-bottom:1px solid rgba(255,255,255,.08); display:flex; overflow-x:auto; }
-  .site-nav a { display:inline-flex; align-items:center; color:rgba(255,255,255,.5); font-size:11px; font-weight:600; letter-spacing:.4px; padding:12px 16px; text-decoration:none; border-bottom:2px solid transparent; white-space:nowrap; transition:color .15s,border-color .15s; flex-shrink:0; }
-  .site-nav a:hover { color:#00B5AD; border-bottom-color:rgba(0,181,173,.4); }
+  /* FLOATING NAV */
+  body { padding-top:44px; }
+  .site-nav { position:fixed; top:0; left:0; right:0; z-index:200; background:#142e3a; border-bottom:1px solid rgba(255,255,255,.12); display:flex; overflow-x:auto; }
+  .site-nav a { display:inline-flex; align-items:center; color:rgba(244,116,33,.7); font-size:11px; font-weight:600; letter-spacing:.4px; padding:12px 16px; text-decoration:none; border-bottom:2px solid transparent; white-space:nowrap; transition:color .15s,border-color .15s; flex-shrink:0; }
+  .site-nav a:hover { color:#F47421; border-bottom-color:rgba(244,116,33,.4); }
+  .site-nav a.active { color:#F47421; border-bottom-color:#F47421; }
   [id] { scroll-margin-top:48px; }
 </style>
 </head>

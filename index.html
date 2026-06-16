@@ -162,6 +162,12 @@
     .wrap{ padding:24px 16px; }
     .score-num{ font-size:56px; }
   }
+
+  .tip { position: relative; display: inline-flex; align-items: center; gap: 5px; }
+  .tip-q { width: 14px; height: 14px; border-radius: 50%; background: rgba(255,255,255,.15); color: rgba(255,255,255,.55); font-size: 8px; font-weight: 800; display: inline-flex; align-items: center; justify-content: center; cursor: default; flex-shrink: 0; }
+  .tip-box { display: none; position: absolute; left: 0; bottom: calc(100% + 8px); background: #fff; color: #1B3A48; font-size: 11px; line-height: 1.55; padding: 9px 12px; border-radius: 4px; width: 210px; box-shadow: 0 4px 20px rgba(0,0,0,.25); z-index: 100; pointer-events: none; }
+  .tip-box::after { content: ''; position: absolute; top: 100%; left: 8px; border: 5px solid transparent; border-top-color: #fff; }
+  .tip:hover .tip-box { display: block; }
 </style>
 </head>
 <body>
@@ -190,38 +196,38 @@
         <div class="score-verdict">High Opportunity</div>
         <div class="score-range">75 &ndash; 89 Range</div>
       </div>
-      <div style="flex-shrink:0;width:110px;height:165px;background:linear-gradient(180deg,#0d2b0d 0%,#1a4a1a 100%);border-radius:6px;box-shadow:0 6px 24px rgba(0,0,0,.5);padding:12px 10px 0;box-sizing:border-box;position:relative;overflow:hidden;">
+      <div style="flex-shrink:0;width:110px;height:165px;background:linear-gradient(180deg,#1e6b1e 0%,#2e8a2e 100%);border-radius:6px;box-shadow:0 6px 24px rgba(0,0,0,.5);padding:12px 10px 0;box-sizing:border-box;position:relative;overflow:hidden;">
         <div style="font-family:Georgia,serif;font-size:6.5px;font-weight:700;color:#F5A623;letter-spacing:2px;margin-bottom:4px;">START AND GROW YOUR</div>
         <div style="font-family:Georgia,serif;font-size:23px;font-weight:900;color:#fff;line-height:1;">LAWN</div>
-        <div style="font-family:Georgia,serif;font-size:23px;font-weight:900;color:#fff;line-height:1;margin-bottom:2px;">CARE</div>
-        <div style="font-family:Arial,sans-serif;font-size:5.5px;color:#7ec87e;letter-spacing:1px;">AND PROPERTY MAINTENANCE</div>
-        <div style="font-family:Georgia,serif;font-size:9px;font-weight:700;color:#7ec87e;margin-bottom:4px;">BUSINESS</div>
-        <div style="position:absolute;bottom:0;left:0;right:0;height:52px;background:linear-gradient(180deg,#2d7a2d 0%,#1a5c1a 100%);"></div>
-        <div style="position:absolute;bottom:0;left:0;right:0;padding:4px 8px;background:rgba(0,0,0,0.45);">
-          <div style="font-family:Arial,sans-serif;font-size:5px;color:rgba(255,255,255,0.55);">@TheSecondActExperiment</div>
+        <div style="font-family:Georgia,serif;font-size:23px;font-weight:900;color:#fff;line-height:1;margin-bottom:3px;">CARE</div>
+        <div style="font-family:Arial,sans-serif;font-size:5.5px;color:#c8f0c8;letter-spacing:1px;margin-bottom:2px;">AND PROPERTY MAINTENANCE</div>
+        <div style="font-family:Georgia,serif;font-size:9px;font-weight:700;color:#c8f0c8;">BUSINESS</div>
+        <div style="position:absolute;bottom:0;left:0;right:0;padding:5px 8px;background:rgba(0,0,0,0.4);border-top:1px solid rgba(245,166,35,0.4);">
+          <div style="font-family:Arial,sans-serif;font-size:5px;color:rgba(255,255,255,0.6);">@TheSecondActExperiment</div>
           <div style="font-family:Arial,sans-serif;font-size:6.5px;font-weight:700;color:#fff;">Kevin Griffin</div>
         </div>
       </div>
     </div>
     <div class="bar-row">
       <div class="bar-item">
-        <div class="bar-meta"><span class="bar-lbl">Demand</span><span class="bar-val">17 / 20</span></div>
+        <div class="bar-meta"><span class="bar-lbl tip">Demand <span class="tip-q">?</span><span class="tip-box">How much buyer demand exists for this niche on Amazon, based on the number of books actively selling and estimated monthly revenue.</span></span><span class="bar-val">17 / 20</span></div>
         <div class="bar-track"><div class="bar-fill" style="width:85%;background:var(--teal);"></div></div>
       </div>
       <div class="bar-item">
-        <div class="bar-meta"><span class="bar-lbl">Competition</span><span class="bar-val">16 / 20</span></div>
+        <div class="bar-meta"><span class="bar-lbl tip">Competition <span class="tip-q">?</span><span class="tip-box">How easy it is to enter and get visibility in this niche. Higher scores mean less competition and more room for new authors to rank.</span></span><span class="bar-val">16 / 20</span></div>
         <div class="bar-track"><div class="bar-fill" style="width:80%;background:var(--teal);"></div></div>
       </div>
       <div class="bar-item">
-        <div class="bar-meta"><span class="bar-lbl">Reviews</span><span class="bar-val">0 / 20</span></div>
+        <div class="bar-meta"><span class="bar-lbl tip">Reviews <span class="tip-q">?</span><span class="tip-box">The number of verified customer reviews the author's book currently has. Reviews build trust and are one of the biggest drivers of Amazon sales conversions.</span></span><span class="bar-val">0 / 20</span></div>
         <div class="bar-track"><div class="bar-fill" style="width:0%;background:var(--orange);"></div></div>
       </div>
       <div class="bar-item">
-        <div class="bar-meta"><span class="bar-lbl">Amazon Ads</span><span style="font-size:10px;background:#ffebee;color:#c62828;padding:2px 10px;border-radius:20px;font-weight:700;">✗ Not Active</span></div>
+        <div class="bar-meta"><span class="bar-lbl tip">Growth Potential <span class="tip-q">?</span><span class="tip-box">How ready the author is to expand their catalogue — factoring in current reviews, ad activity, and the number of additional titles possible in this niche.</span></span><span class="bar-val">14 / 20</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:70%;background:var(--teal);"></div></div>
       </div>
       <div class="bar-item">
-        <div class="bar-meta"><span class="bar-lbl">Expansion Potential</span><span class="bar-val">20 / 20</span></div>
-        <div class="bar-track"><div class="bar-fill" style="width:100%;background:var(--teal);"></div></div>
+        <div class="bar-meta"><span class="bar-lbl tip">Amazon Ads <span class="tip-q">?</span><span class="tip-box">Whether the author is currently running Amazon Sponsored Products ads. Ads boost visibility and accelerate discoverability, especially for new books with few reviews.</span></span><span class="bar-val">Not Active</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:0%;"></div></div>
       </div>
     </div>
   </div>
@@ -315,7 +321,7 @@
 <!-- LOG BOOK OPPORTUNITY -->
 <div class="sec-label">Expansion Opportunity &mdash; Lawn Care Business Log Book</div>
 <div class="feature-card orange-top mb">
-  <div class="feature-eyebrow orange">Highest Expansion Potential &mdash; Separate Revenue Stream</div>
+  <div class="feature-eyebrow orange">Highest Growth Potential &mdash; Separate Revenue Stream</div>
   <div class="g2" style="gap:32px;align-items:start;">
     <div>
       <div class="card-title">The Log Book Space &mdash; Your Biggest Untapped Opportunity</div>

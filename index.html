@@ -199,7 +199,7 @@
   .site-nav { position:fixed; top:0; left:0; right:0; z-index:200; background:#00B5AD; border-bottom:none; display:flex; justify-content:center; gap:10px; padding:10px 20px; overflow-x:auto; }
   .site-nav a { display:inline-flex; align-items:center; color:#fff; font-size:13px; font-weight:400; letter-spacing:.4px; padding:10px 16px; text-decoration:none; border:1px solid rgba(255,255,255,.6); white-space:nowrap; transition:color .15s,background .15s; flex-shrink:0; background:rgba(0,0,0,.15); border-radius:4px; }
   .site-nav a:hover { background:rgba(0,0,0,.25); }
-  .site-nav a.active { font-weight:600; }
+  .site-nav a.active { font-weight:700; background:rgba(255,255,255,.25); border-color:#fff; }
   [id] { scroll-margin-top:120px; }
   /* HARDBACK CARD */
   .hb-card { background: var(--white); border: 1px solid var(--border); border-top: 4px solid var(--teal); border-radius: 6px; padding: 28px 32px; margin-bottom: 24px; }
@@ -784,7 +784,7 @@
 <div class="sec-label">Jordan&rsquo;s Observation</div>
 <div class="card mb">
   <p style="font-size:13px;color:var(--mid);line-height:1.85;">Kevin, you have something genuinely rare in this space: a book built on 12 years of hands-on experience in a growing, commercially active niche, backed by a YouTube channel that most authors would love to have. The listing optimisation and log book opportunity together represent two clear revenue levers you can pull immediately. The property maintenance and lawn care space rewards practical authority, and that is exactly what you bring. The log book space is real, the demand is confirmed, and your credibility as an actual practitioner makes you the most qualified person in this niche to publish there. The pieces are in place. The work now is execution.</p>
-  <div style="margin-top:16px;background:var(--navy);border-radius:4px;padding:14px 18px;font-size:12px;color:#fff;line-height:1.65;"><span style="color:var(--teal);font-weight:700;">Note from Jordan:</span> I would welcome the opportunity to support you on your publishing journey. Whether you are looking for free coaching support or a managed service, I can help you with sponsored ad campaigns, editing, formatting, or cover design and more. Please feel free to send me a direct message if you would like to explore this further.</div>
+  <div style="margin-top:16px;background:var(--navy);border-radius:4px;padding:14px 18px;font-size:12px;color:#fff;line-height:1.65;"><span style="color:var(--teal);font-weight:700;">Note from Jordan:</span> I would welcome the opportunity to support you on your publishing journey.<br><br>Whether you are looking for free coaching support or a managed service, I can help you with sponsored ad campaigns, editing, formatting, or cover design and more.<br><br>Please feel free to send me a direct message if you&rsquo;d like to explore further.</div>
 </div>
 
 </div><!-- /wrap -->
@@ -794,21 +794,49 @@
 </div>
 
 <script>
-window.addEventListener('DOMContentLoaded', function() {
+(function() {
   var nav = document.querySelector('nav.site-nav');
   if (!nav) return;
-  var links = nav.querySelectorAll('a');
-  var target = null;
-  for (var i = 0; i < links.length; i++) {
-    if (links[i].textContent.indexOf('Marketing Strategy') !== -1) {
-      target = links[i];
-      break;
+  var navLinks = Array.from(nav.querySelectorAll('a[href^="#"]'));
+  var sectionIds = navLinks.map(function(a) { return a.getAttribute('href').slice(1); });
+
+  function getActiveId() {
+    var scrollY = window.scrollY + 150;
+    var active = sectionIds[0];
+    sectionIds.forEach(function(id) {
+      var el = document.getElementById(id);
+      if (el && el.getBoundingClientRect().top + window.scrollY <= scrollY) {
+        active = id;
+      }
+    });
+    return active;
+  }
+
+  function setActive(id) {
+    navLinks.forEach(function(a) { a.classList.remove('active'); });
+    var activeLink = nav.querySelector('a[href="#' + id + '"]');
+    if (activeLink) {
+      activeLink.classList.add('active');
+      // Centre active link in nav
+      nav.scrollLeft = activeLink.offsetLeft - (nav.offsetWidth / 2) + (activeLink.offsetWidth / 2);
     }
   }
-  if (target) {
-    nav.scrollLeft = target.offsetLeft - (nav.offsetWidth / 2) + (target.offsetWidth / 2);
-  }
-});
+
+  // Set Marketing Strategy active on load
+  window.addEventListener('DOMContentLoaded', function() { setActive('marketing'); });
+
+  // Scrollspy
+  var ticking = false;
+  window.addEventListener('scroll', function() {
+    if (!ticking) {
+      window.requestAnimationFrame(function() {
+        setActive(getActiveId());
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
+})();
 </script>
 </body>
 </html>

@@ -34,15 +34,6 @@
     font-size: 13px;
   }
 
-  /* HEADER */
-  .hdr { background: var(--navy); color: #fff; padding: 40px 56px 32px; border-bottom: 4px solid var(--teal); }
-  .hdr-meta { font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--orange); margin-bottom: 10px; }
-  .hdr h1 { font-size: 28px; font-weight: 700; color: #fff; letter-spacing: -.3px; margin-bottom: 4px; }
-  .hdr h2 { font-size: 14px; color: var(--orange); font-weight: 400; margin-bottom: 18px; }
-  .hdr-pills { display: flex; flex-wrap: wrap; gap: 8px; }
-  .hdr-pill { display: inline-block; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15); color: rgba(255,255,255,.75); padding: 5px 18px; border-radius: 3px; font-size: 14px; }
-  .hdr-pill.accent { background: var(--orange); border-color: var(--orange); color: #fff; font-weight: 600; }
-
   /* LAYOUT */
   .wrap { max-width: 1260px; margin: 0 auto; padding: 40px 32px; }
   .g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
@@ -157,51 +148,12 @@
   /* FOOTER */
   .ftr { background: var(--navy); color: rgba(255,255,255,.35); text-align: center; padding: 22px; font-size: 11px; }
 
-  @media(max-width:900px){
-    .g2{ grid-template-columns:1fr; }
-    .hdr{ padding:24px 20px; }
-    .wrap{ padding:24px 16px; }
-    .score-num{ font-size:56px; }
-  }
-  @media(max-width:600px){
-    html,body{ overflow-x:hidden; }
-    .hdr{ padding:16px; }
-    .hdr h1{ font-size:22px; }
-    .hdr h2{ font-size:13px; }
-    .hdr-pill{ font-size:12px; padding:4px 12px; }
-    .wrap{ padding:16px 12px; }
-    .g2{ grid-template-columns:1fr; gap:14px; }
-    .card{ padding:18px 16px; }
-    .score-panel{ padding:20px 16px; }
-    .score-num{ font-size:48px; }
-    .score-denom{ font-size:20px; }
-    .score-verdict{ font-size:15px; }
-    .stat-strip{ grid-template-columns:1fr; }
-    .stat-cell{ padding:12px; }
-    .site-nav a{ font-size:11px; padding:7px 10px; }
-    .site-nav{ gap:6px; padding:8px 10px; }
-    .hb-eyebrow{ font-size:14px; }
-    .step{ padding:12px 14px; }
-    .banner-stat{ font-size:12px; padding:6px 12px; }
-    .item-t{ font-size:13px; }
-    .sec-label{ font-size:11px; }
-    table{ font-size:11px; }
-    th,td{ padding:7px 8px; }
-  }
-
   .tip { position: relative; display: inline-flex; align-items: center; gap: 5px; }
   .tip-q { width: 14px; height: 14px; border-radius: 50%; background: rgba(255,255,255,.15); color: rgba(255,255,255,.55); font-size: 8px; font-weight: 800; display: inline-flex; align-items: center; justify-content: center; cursor: default; flex-shrink: 0; }
   .tip-box { display: none; position: absolute; left: 0; bottom: calc(100% + 8px); background: #fff; color: #1B3A48; font-size: 11px; line-height: 1.55; padding: 9px 12px; border-radius: 4px; width: 210px; box-shadow: 0 4px 20px rgba(0,0,0,.25); z-index: 100; pointer-events: none; }
   .tip-box::after { content: ''; position: absolute; top: 100%; left: 8px; border: 5px solid transparent; border-top-color: #fff; }
   .tip:hover .tip-box { display: block; }
 
-  /* FLOATING NAV */
-  body { padding-top:116px; }
-  .site-nav { position:fixed; top:0; left:0; right:0; z-index:200; background:#00B5AD; border-bottom:none; display:flex; justify-content:center; gap:10px; padding:10px 20px; overflow-x:auto; }
-  .site-nav a { display:inline-flex; align-items:center; color:#fff; font-size:13px; font-weight:400; letter-spacing:.4px; padding:10px 16px; text-decoration:none; border:1px solid rgba(255,255,255,.6); white-space:nowrap; transition:color .15s,background .15s; flex-shrink:0; background:rgba(0,0,0,.15); border-radius:4px; }
-  .site-nav a:hover { background:rgba(0,0,0,.25); }
-  .site-nav a.active { font-weight:700; background:rgba(255,255,255,.25); border-color:#fff; }
-  [id] { scroll-margin-top:120px; }
   /* HARDBACK CARD */
   .hb-card { background: var(--white); border: 1px solid var(--border); border-top: 4px solid var(--teal); border-radius: 6px; padding: 28px 32px; margin-bottom: 24px; }
   .hb-eyebrow { font-size: 18px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--teal-d); margin-bottom: 8px; }
@@ -264,7 +216,7 @@
 <body>
 
 <div class="mob-bar">
-  <div class="mob-logo"><a href="#score"><img src="logo3.png" alt="Readerbull"></a></div>
+  <div class="mob-logo"><a href="#score"><img src="readabull-logo.png" alt="Readerbull"></a></div>
   <button class="mob-hamburger" onclick="toggleSidebar()" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
@@ -272,7 +224,7 @@
 <div class="mob-overlay" id="mob-overlay" onclick="toggleSidebar()"></div>
 
 <div class="sidebar" id="sidebar">
-  <div class="sb-logo"><a href="#score"><img src="logo3.png" alt="Readerbull"></a></div>
+  <div class="sb-logo"><a href="#score"><img src="readabull-logo.png" alt="Readerbull"></a></div>
   <nav class="sb-nav">
     <div class="sb-label">Navigate</div>
     <a href="#score"><i class="ti ti-chart-bar"></i>Overview</a>
@@ -296,24 +248,6 @@
 <button class="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#8593;</button>
 
 
-<h1>Start and Grow Your Lawn Care and Property Maintenance Business</h1>
-  <h2>The Complete Practical Guide to Pricing, Clients, and Operations with Ready-to-Use Business Forms</h2>
-  <div class="hdr-pills">
-    <span class="hdr-pill">Author: Kevin Griffin</span>
-    <span class="hdr-pill">Experience: 12 Years</span>
-    <span class="hdr-pill">Niche: Lawn Care &amp; Property Maintenance</span>
-    <span class="hdr-pill accent">Score: 81 / 100 - High Opportunity</span>
-  </div>
-</div>
-<div style="position:fixed;top:0;left:0;right:0;z-index:201;background:#1B3A48;height:58px;"></div>
-<nav class="site-nav" style="top:58px;">
-  <a href="#score"><span style="font-size:16px;color:#F47421;line-height:1;">&#8594;</span>&nbsp; Opportunity Score</a>
-  <a href="#marketing"><span style="font-size:16px;color:#F47421;line-height:1;">&#8594;</span>&nbsp; Marketing Strategy</a>
-  <a href="#market"><span style="font-size:16px;color:#F47421;line-height:1;">&#8594;</span>&nbsp; Market Analysis</a>
-  <a href="#competitors"><span style="font-size:16px;color:#F47421;line-height:1;">&#8594;</span>&nbsp; Competitors</a>
-  <a href="#keywords"><span style="font-size:16px;color:#F47421;line-height:1;">&#8594;</span>&nbsp; Keywords</a>
-  <a href="#quick-wins"><span style="font-size:16px;color:#F47421;line-height:1;">&#8594;</span>&nbsp; Quick Wins</a>
-</nav>
 
 <div class="main">
 <div class="wrap" id="score">
@@ -323,10 +257,9 @@
   <div class="score-panel">
     <div style="display:flex;gap:24px;align-items:center;margin-bottom:20px;">
       <div style="flex:1;min-width:0;">
-        <div class="score-eyebrow">Author Opportunity Score</div>
+        <div class="score-eyebrow">Discoverability Score</div>
         <div><span class="score-num">81</span><span class="score-denom">&thinsp;/ 100</span></div>
-        <div class="score-verdict">High Opportunity</div>
-        <div class="score-range">75 &ndash; 89 Range</div>
+        <div class="score-range" style="background:rgba(244,116,33,.18);border:1px solid rgba(244,116,33,.4);">High Opportunity</div>
       </div>
       <div style="flex-shrink:0;width:110px;height:165px;background:linear-gradient(180deg,#1e6b1e 0%,#2e8a2e 100%);border-radius:6px;box-shadow:0 6px 24px rgba(0,0,0,.5);padding:12px 10px 0;box-sizing:border-box;position:relative;overflow:hidden;">
         <div style="font-family:Georgia,serif;font-size:6.5px;font-weight:700;color:#F5A623;letter-spacing:2px;margin-bottom:4px;">START AND GROW YOUR</div>

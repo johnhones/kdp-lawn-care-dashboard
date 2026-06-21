@@ -842,7 +842,7 @@
 
 <script>
 (function() {
-  var nav = document.querySelector('nav.site-nav');
+  var nav = document.querySelector('nav.sb-nav');
   if (!nav) return;
   var navLinks = Array.from(nav.querySelectorAll('a[href^="#"]'));
   var sectionIds = navLinks.map(function(a) { return a.getAttribute('href').slice(1); });
@@ -870,7 +870,7 @@
   }
 
   // Set Marketing Strategy active on load
-  window.addEventListener('DOMContentLoaded', function() { setActive('marketing'); });
+  window.addEventListener('DOMContentLoaded', function() { setActive(getActiveId()); });
 
   // Scrollspy
   var ticking = false;

@@ -920,41 +920,31 @@
   var nav = document.querySelector('nav.sb-nav');
   if (!nav) return;
   var navLinks = Array.from(nav.querySelectorAll('a[href^="#"]'));
-  var sectionIds = navLinks.map(function(a) { return a.getAttribute('href').slice(1); });
-
+  var sectionIds = navLinks.map(function(a) { return a.getAttribute('href').slice(1); }).filter(Boolean);
+  // Sort by DOM position so scroll-spy iterates sections in page order
+  var domOrderIds = sectionIds.filter(function(id) { return document.getElementById(id); });
+  domOrderIds.sort(function(a, b) {
+    return document.getElementById(a).offsetTop - document.getElementById(b).offsetTop;
+  });
   function getActiveId() {
     var scrollY = window.scrollY + 150;
-    var active = sectionIds[0];
-    sectionIds.forEach(function(id) {
+    var active = domOrderIds[0];
+    domOrderIds.forEach(function(id) {
       var el = document.getElementById(id);
-      if (el && el.getBoundingClientRect().top + window.scrollY <= scrollY) {
-        active = id;
-      }
+      if (el && el.getBoundingClientRect().top + window.scrollY <= scrollY) active = id;
     });
     return active;
   }
-
   function setActive(id) {
     navLinks.forEach(function(a) { a.classList.remove('active'); });
     var activeLink = nav.querySelector('a[href="#' + id + '"]');
-    if (activeLink) {
-      activeLink.classList.add('active');
-      // Centre active link in nav
-      nav.scrollLeft = activeLink.offsetLeft - (nav.offsetWidth / 2) + (activeLink.offsetWidth / 2);
-    }
+    if (activeLink) activeLink.classList.add('active');
   }
-
-  // Set Marketing Strategy active on load
-  window.addEventListener('DOMContentLoaded', function() { setActive(getActiveId()); });
-
-  // Scrollspy
+  document.addEventListener('DOMContentLoaded', function() { setActive(getActiveId()); });
   var ticking = false;
   window.addEventListener('scroll', function() {
     if (!ticking) {
-      window.requestAnimationFrame(function() {
-        setActive(getActiveId());
-        ticking = false;
-      });
+      window.requestAnimationFrame(function() { setActive(getActiveId()); ticking = false; });
       ticking = true;
     }
   });

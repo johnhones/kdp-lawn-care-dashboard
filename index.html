@@ -51,7 +51,7 @@
 
   /* SCORE */
   .score-panel { background: var(--navy); border-radius: 6px; padding: 32px; }
-  .score-eyebrow { font-size: 9px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--orange); margin-bottom: 12px; }
+  .score-eyebrow { font-size: 14px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--orange); margin-bottom: 12px; }
   .score-num { font-size: 80px; font-weight: 900; color: var(--teal); line-height: 1; }
   .score-denom { font-size: 28px; color: var(--orange); font-weight: 300; }
   .score-verdict { font-size: 18px; font-weight: 600; color: #fff; margin-top: 8px; }
@@ -216,7 +216,7 @@
 <body>
 
 <div class="mob-bar">
-  <div class="mob-logo"><a href="#score"><img src="readabull-logo.png" alt="Readerbull"></a></div>
+  <div class="mob-logo"><a href="#score"><img src="logo3.png" alt="Readerbull"></a></div>
   <button class="mob-hamburger" onclick="toggleSidebar()" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
@@ -224,7 +224,7 @@
 <div class="mob-overlay" id="mob-overlay" onclick="toggleSidebar()"></div>
 
 <div class="sidebar" id="sidebar">
-  <div class="sb-logo"><a href="#score"><img src="readabull-logo.png" alt="Readerbull"></a></div>
+  <div class="sb-logo"><a href="#score"><img src="logo3.png" alt="Readerbull"></a></div>
   <nav class="sb-nav">
     <div class="sb-label">Navigate</div>
     <a href="#score"><i class="ti ti-chart-bar"></i>Overview</a>
@@ -254,53 +254,81 @@
 
 <!-- SCORE + SUMMARY -->
 <div class="g2 mb">
-  <div class="score-panel">
-    <div style="display:flex;gap:24px;align-items:center;margin-bottom:20px;">
-      <div style="flex:1;min-width:0;">
-        <div class="score-eyebrow">Discoverability Score</div>
-        <div><span class="score-num">81</span><span class="score-denom">&thinsp;/ 100</span></div>
-        <div class="score-range" style="background:rgba(244,116,33,.18);border:1px solid rgba(244,116,33,.4);">High Opportunity</div>
-      </div>
-      <div style="flex-shrink:0;width:110px;height:165px;background:linear-gradient(180deg,#1e6b1e 0%,#2e8a2e 100%);border-radius:6px;box-shadow:0 6px 24px rgba(0,0,0,.5);padding:12px 10px 0;box-sizing:border-box;position:relative;overflow:hidden;">
-        <div style="font-family:Georgia,serif;font-size:6.5px;font-weight:700;color:#F5A623;letter-spacing:2px;margin-bottom:4px;">START AND GROW YOUR</div>
-        <div style="font-family:Georgia,serif;font-size:23px;font-weight:900;color:#fff;line-height:1;">LAWN</div>
-        <div style="font-family:Georgia,serif;font-size:23px;font-weight:900;color:#fff;line-height:1;margin-bottom:3px;">CARE</div>
-        <div style="font-family:Arial,sans-serif;font-size:5.5px;color:#c8f0c8;letter-spacing:1px;margin-bottom:2px;">AND PROPERTY MAINTENANCE</div>
-        <div style="font-family:Georgia,serif;font-size:9px;font-weight:700;color:#c8f0c8;">BUSINESS</div>
-        <div style="position:absolute;bottom:0;left:0;right:0;padding:5px 8px;background:rgba(0,0,0,0.4);border-top:1px solid rgba(245,166,35,0.4);">
-          <div style="font-family:Arial,sans-serif;font-size:5px;color:rgba(255,255,255,0.6);">@TheSecondActExperiment</div>
-          <div style="font-family:Arial,sans-serif;font-size:6.5px;font-weight:700;color:#fff;">Kevin Griffin</div>
+  <div style="border-radius:6px;overflow:hidden;border:1px solid var(--border);display:flex;flex-direction:column;">
+    <div style="background:var(--navy);padding:32px;">
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:16px;">
+        <div>
+          <div class="score-eyebrow">Discoverability Score</div>
+          <div><span class="score-num" style="color:#00B5AD;">81</span><span class="score-denom">&thinsp;/ 100</span></div>
+          <div class="score-range" style="font-weight:400;background:rgba(244,116,33,.18);border:1px solid rgba(244,116,33,.4);">High Opportunity</div>
+        </div>
+        <div style="width:158px;height:210px;background:linear-gradient(180deg,#1e6b1e 0%,#2e8a2e 100%);border-radius:4px;box-shadow:0 8px 32px rgba(0,0,0,.5);padding:14px 12px 0;box-sizing:border-box;position:relative;overflow:hidden;flex-shrink:0;right:84px;">
+          <div style="font-family:Georgia,serif;font-size:7px;font-weight:700;color:#F5A623;letter-spacing:2px;margin-bottom:5px;">START AND GROW YOUR</div>
+          <div style="font-family:Georgia,serif;font-size:30px;font-weight:900;color:#fff;line-height:1;">LAWN</div>
+          <div style="font-family:Georgia,serif;font-size:30px;font-weight:900;color:#fff;line-height:1;margin-bottom:3px;">CARE</div>
+          <div style="font-family:Arial,sans-serif;font-size:6px;color:#c8f0c8;letter-spacing:1px;margin-bottom:2px;">AND PROPERTY MAINTENANCE</div>
+          <div style="font-family:Georgia,serif;font-size:11px;font-weight:700;color:#c8f0c8;">BUSINESS</div>
+          <div style="position:absolute;bottom:0;left:0;right:0;padding:6px 10px;background:rgba(0,0,0,0.4);border-top:1px solid rgba(245,166,35,0.4);">
+            <div style="font-family:Arial,sans-serif;font-size:6px;color:rgba(255,255,255,0.6);">@TheSecondActExperiment</div>
+            <div style="font-family:Arial,sans-serif;font-size:8px;font-weight:700;color:#fff;">Kevin Griffin</div>
+          </div>
         </div>
       </div>
     </div>
+    <div style="background:var(--navy);padding:28px 32px 32px;">
     <div class="bar-row">
       <div class="bar-item">
         <div class="bar-meta"><span class="bar-lbl tip">Demand <span class="tip-q">?</span><span class="tip-box">How much buyer demand exists for this niche on Amazon, based on the number of books actively selling and estimated monthly revenue.</span></span><span class="bar-val">17 / 20</span></div>
         <div class="bar-track"><div class="bar-fill" style="width:85%;background:var(--teal);"></div></div>
       </div>
       <div class="bar-item">
-        <div class="bar-meta"><span class="bar-lbl tip">Competition <span class="tip-q">?</span><span class="tip-box">How competitive this niche is on Amazon. Lower scores mean less competition and more room to rank. Higher scores mean a more crowded niche.</span></span><span class="bar-val">16 / 20</span></div>
-        <div class="bar-track"><div class="bar-fill" style="width:80%;background:var(--teal);"></div></div>
+        <div class="bar-meta"><span class="bar-lbl tip">Competition <span class="tip-q">?</span><span class="tip-box">How competitive this niche is for paid books. Lower scores mean less competition and more room to rank with ads.</span></span><span class="bar-val">16 / 20</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:80%;background:var(--orange);"></div></div>
       </div>
       <div class="bar-item">
-        <div class="bar-meta"><span class="bar-lbl tip">Reviews <span class="tip-q">?</span><span class="tip-box">The number of verified customer reviews your book currently has. Reviews build trust and are one of the biggest drivers of Amazon sales conversions.</span></span><span class="bar-val">0 / 20</span></div>
+        <div class="bar-meta"><span class="bar-lbl tip">Reviews <span class="tip-q">?</span><span class="tip-box">Written reviews on your Amazon listing. You have 0 written reviews. Target is 15 before running ads.</span></span><span class="bar-val">0</span></div>
         <div class="bar-track"><div class="bar-fill" style="width:0%;background:var(--orange);"></div></div>
       </div>
       <div class="bar-item">
-        <div class="bar-meta"><span class="bar-lbl tip">Growth Potential <span class="tip-q">?</span><span class="tip-box">How ready your book is to expand your catalogue, factoring in current reviews, ad activity, and the number of additional titles possible in this niche.</span></span><span class="bar-val">14 / 20</span></div>
+        <div class="bar-meta"><span class="bar-lbl tip">Ratings <span class="tip-q">?</span><span class="tip-box">Total Amazon count of ratings and written reviews combined, as displayed on your listing. This is the number shoppers see on the search results page.</span></span><span class="bar-val">0</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:0%;background:var(--orange);"></div></div>
+      </div>
+      <div class="bar-item">
+        <div class="bar-meta"><span class="bar-lbl tip">Growth Potential <span class="tip-q">?</span><span class="tip-box">How positioned your book is to grow, factoring in current reviews, ad activity, and organic ranking position.</span></span><span class="bar-val">14 / 20</span></div>
         <div class="bar-track"><div class="bar-fill" style="width:70%;background:var(--teal);"></div></div>
       </div>
       <div class="bar-item">
-        <div class="bar-meta"><span class="bar-lbl tip">Amazon Ads <span class="tip-q">?</span><span class="tip-box">An Amazon ad campaign will help you sell more books. We recommend having at least 5 reviews before running ads, as reviews significantly improve conversion rates.</span></span><span class="bar-val">Not Active</span></div>
+        <div class="bar-meta"><span class="bar-lbl tip">Amazon Ads <span class="tip-q">?</span><span class="tip-box">Running Amazon Ads is the highest-leverage action once you have 15 reviews. Ads without reviews waste budget.</span></span><span class="bar-val">Not Active</span></div>
         <div class="bar-track"><div class="bar-fill" style="width:0%;"></div></div>
       </div>
+    </div>
+    </div>
+    <div style="background:var(--navy);padding:28px 32px 32px;flex:1;border-top:1px solid rgba(255,255,255,.06);">
+      <div style="font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:20px;">Best Seller Rank</div>
+      <div style="margin-bottom:16px;">
+        <div style="font-size:11px;color:var(--orange);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;">Your book</div>
+        <div style="font-size:32px;font-weight:700;color:var(--teal);line-height:1;">New title</div>
+      </div>
+      <div style="margin-bottom:20px;">
+        <div style="font-size:11px;color:var(--orange);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;">Niche average</div>
+        <div style="font-size:32px;font-weight:700;color:rgba(255,255,255,.7);line-height:1;">Data required</div>
+      </div>
+      <div style="font-size:12px;color:rgba(255,255,255,.65);line-height:1.7;">This is a new title so BSR will appear once Amazon registers first sales. Please provide the niche average BSR from your BookBeam screenshot to complete this section.</div>
     </div>
   </div>
 
   <div style="display:flex;flex-direction:column;gap:20px;">
     <div class="card">
       <div class="card-hdr">Book Summary</div>
-      <p style="font-size:13px;color:var(--mid);line-height:1.7;"><em>Start and Grow Your Lawn Care and Property Maintenance Business</em> is a hands-on business guide written from 12 years of real-world experience in property maintenance. Covering pricing, client acquisition, daily operations, and business forms, it is a practitioner&rsquo;s guide written by someone who has actually run the business. That credibility is rare and commercially powerful.</p>
+      <div style="margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--border);">
+        <div style="font-size:22px;font-weight:400;color:#111111;line-height:1.35;margin-bottom:4px;">Start and Grow Your Lawn Care and Property Maintenance Business</div>
+        <div style="font-size:15px;color:var(--orange);margin-bottom:8px;">by Kevin Griffin</div>
+        <div style="display:flex;align-items:center;gap:6px;">
+          <span style="font-size:12px;color:var(--mid);">No ratings yet</span>
+        </div>
+      </div>
+      <p style="font-size:13px;color:var(--mid);line-height:1.7;margin-bottom:12px;"><em>Start and Grow Your Lawn Care and Property Maintenance Business</em> is a hands-on guide written from 12 years of real-world experience in property maintenance. Covering pricing, client acquisition, daily operations, and business forms, it is a practitioner&rsquo;s guide written by someone who has actually run the business.</p>
+      <p style="font-size:13px;font-weight:700;color:var(--mid);line-height:1.6;">That credibility is rare in this niche and commercially powerful.</p>
       <div class="stat-strip">
         <div class="stat-cell"><div class="stat-v">15+</div><div class="stat-l">Books Selling Well In This Niche</div><div><span style="display:inline-block;margin-top:6px;font-size:10px;background:#e0f7f4;color:#007A75;padding:2px 10px;border-radius:20px;font-weight:700;">&#10003; Healthy</span></div></div>
         <div class="stat-cell"><div class="stat-v">~$12,000/mo</div><div class="stat-l">KDP Niche Revenue</div><div><span style="display:inline-block;margin-top:6px;font-size:10px;background:#e0f7f4;color:#007A75;padding:2px 10px;border-radius:20px;font-weight:700;">&#10003; Real Demand</span></div></div>
@@ -309,7 +337,8 @@
     </div>
     <div class="card">
       <div class="card-hdr">Professional Assessment</div>
-      <p style="font-size:13px;color:var(--mid);line-height:1.7;margin-bottom:14px;">This is one of the most commercially exciting audits completed in 2026. Your book covers a high-demand niche and opens a clear path into the highly profitable log book space, a separate revenue stream that could rival or exceed the main book.</p>
+      <p style="font-size:13px;color:var(--mid);line-height:1.7;margin-bottom:12px;">Your book covers a high-demand niche with real buyer intent and very few credentialed competitors. The lawn care space on Amazon is active and growing, and your 12 years of real-world experience gives you an authority edge no generic guide can match.</p>
+      <p style="font-size:13px;color:var(--mid);line-height:1.7;margin-bottom:14px;">Reviews are the first priority. Build to 15, then optimize your keyword listing, then launch Amazon Ads. You also have a clear path into the log book space, a separate revenue stream that could rival the main book.</p>
       <div style="display:flex;flex-wrap:wrap;gap:6px;">
         <span class="badge b-teal">12 Years Experience</span>
         <span class="badge b-teal">YouTube Presence</span>
@@ -323,7 +352,7 @@
 
 <!-- KEY FINDING BANNER -->
 <div class="banner mb">
-  <h3 style="color:var(--orange);">Key Finding: Two Highly Profitable Keywords, One Author</h3>
+  <h3>&#128161; Two Highly Profitable Keywords. One Author. Build Both.</h3>
   <p style="color:#fff;">Research identifies not one but <strong style="color:#fff;">two separate high-value keyword opportunities</strong> for your catalogue: &ldquo;property maintenance book&rdquo; and &ldquo;lawn care business log book.&rdquo; The log book space alone represents a significant standalone revenue stream, and you are already positioned to enter it immediately with 12 years of industry knowledge.</p>
   <div>
     <span class="banner-stat">&#128200; &ldquo;Property Maintenance Book&rdquo;</span>
